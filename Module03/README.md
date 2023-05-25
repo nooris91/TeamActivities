@@ -60,6 +60,20 @@ graph LR
 
 Take a look at [linkedlist.h](linkedlist.h). Describe what you see and notice. Pay attention to the `push_front` and `add_back` functions. In your own words, describe to each other what each function does. 
 
+The “Pair *new_node” function creates a new node with the wins and year values and sets its next pointer to the provided next node.
+
+“NeuList* create_list” function creates a new linked list by allocating memory for a NeuList structure, which initializes its head pointer to NULL, and sets its size to 0. It returns a pointer to the newly created linked list.
+
+“push_front” function adds a new node to the front of the linked list. This function creates a new node using the new_node function and then sets its next pointer to the current head of the list, and after that, it updates the list's head pointer to point to the new node. 
+
+“add_back” function adds a new node to the end of the linked list. This function creates a new node using the new_node function, and then checks if the list is empty or not. In case, if the list is empty, the new node becomes the head of the list. And if the list is not empty, it traverses the list until it reaches the last node and sets the next pointer of that node to the new node.
+
+“print_list” function is used to print the contents of the linked list.
+
+“Pair *find” function is used to search the linked list for a node with a specific year value and return a pointer to that node if found.
+
+“free_list” function is used to free the memory allocated for the linked list and its nodes.
+
 #### Drawing Push Front
 Using a similar drawing to the list above, draw out what happens when you call `push_front`. The important part is to help understand the order of the code, and what happens to the pointers.
 
