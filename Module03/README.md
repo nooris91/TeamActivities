@@ -82,6 +82,19 @@ If you did it correctly, your print should look like
 #### More Iteration Practice - Find
 Looking at the function `Pair *find(PairList *list, int year)`, write a function that finds a node in the list, and returns it. If the node is not found, return NULL.
 
+```c
+Pair *find(NeuList *list, int year) {
+    Pair *curr = list->head;
+    while (curr != NULL) {
+        if (curr->year == year) {
+            return curr;
+        }
+        curr = curr->next;
+    }
+    return NULL;
+}
+```
+
 Add more tests to your main function to test this function.
 
 
