@@ -78,10 +78,27 @@ void print_info(int* counts) {
  * Finally, we print the info for each instruction using print_info.
 */
 void run_program(char* file_name) {
-     // student TODO
+    FILE *file = fopen(file_name, "r");
+    if (file == NULL) {
+        printf("Failed to open the file.\n");
+        exit(1);
+    }
 
+    int counts[11] = {0};
+
+    char line[BUFF_SIZE];
+    while (fgets(line, BUFF_SIZE, file) != NULL) {
+        convertToUpperCase(line);
+
+        for (int i = 0; i < 11; i++)
+        {
+            if (contains(line, instructions[i]))
+                counts[i]++;
+        }
+    }
+    fclose(file);
+    print_info(counts);
 }
-
 
 /**
  * Main entry point, requires a file name to run
